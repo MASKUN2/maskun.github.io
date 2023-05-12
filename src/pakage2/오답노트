@@ -54,3 +54,7 @@ public class PerCalculator {
 	at java.base/java.io.PrintStream.format(PrintStream.java:1209)
 	at java.base/java.io.PrintStream.printf(PrintStream.java:1105)
 	at Psj/pakage2.PerCalculator.main(PerCalculator.java:36)
+
+	
+// 230512 오류
+System.out.printf("PER은 %c 배 입니다. %n%n", Form2.format(Per)); 지시자를 %c 문자로 해버려서 오류
