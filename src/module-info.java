@@ -1,0 +1,9 @@
+/**
+ * 
+ */
+/**
+ * @author masku
+ *
+ */
+module Psj {
+}
