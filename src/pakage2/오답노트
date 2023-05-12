@@ -1,0 +1,56 @@
+//실패 1 : 무한루프 발생 230512
+package pakage2;
+
+public class PerCalculator {
+
+	
+	public static void main(String[] args) {
+		
+
+		Boolean LoopCheck = true;
+		int LoopNumberCheck = 0 ;
+		
+		if (LoopNumberCheck == 3) {
+			LoopCheck = false;
+		}
+		// if 문에서 넘어가버리면 While 영역에서 반복하며 조건확인을 하지않음. 
+		// if 문을 아래로 넣던가 해야한다. 
+		
+		while (LoopCheck) {
+			System.out.println("PER 계산기입니다. 번호를 입력하세요");
+			System.out.println("1. 주당시장가격 입력");
+			System.out.println("2. 주당 순이익 입력");
+			System.out.println("3. 계산결과 확인");
+			System.out.println("4. 종료");
+			
+			LoopNumberCheck += 1;
+			
+
+			System.out.println(LoopNumberCheck);
+		}
+	
+		
+
+	}
+
+}
+
+++ 출력서식 자료 https://ps3940.tistory.com/65
+
+
+// 230512 오류 포맷팅 https://keep-cool.tistory.com/15
+			System.out.println("입력된 값은 %d 원입니다.", SharePrice);
+			printtf로 바꿔야함
+			
+// 235012 오류 캐스팅 할때 (Double) i를 함 (이것은 래퍼클래스라서 안됨) https://stackoverflow.com/questions/5566336/classcastexception-casting-integer-to-double
+// 230512 오류
+현재주가를 입력해주세요(단위: 원)
+23324
+입력된 값은 Exception in thread "main" java.util.IllegalFormatConversionException: c != java.lang.String
+	at java.base/java.util.Formatter$FormatSpecifier.failConversion(Formatter.java:4442)
+	at java.base/java.util.Formatter$FormatSpecifier.printCharacter(Formatter.java:3039)
+	at java.base/java.util.Formatter$FormatSpecifier.print(Formatter.java:2927)
+	at java.base/java.util.Formatter.format(Formatter.java:2689)
+	at java.base/java.io.PrintStream.format(PrintStream.java:1209)
+	at java.base/java.io.PrintStream.printf(PrintStream.java:1105)
+	at Psj/pakage2.PerCalculator.main(PerCalculator.java:36)
