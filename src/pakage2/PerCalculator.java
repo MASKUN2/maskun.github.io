@@ -12,20 +12,20 @@ public class PerCalculator {
 		double Eps = 0;
 		
 		while (LoopCheck) {
-			Menu = MenuSelect();
+			Menu = selectMenu();
 			
 			switch (Menu) {
 			case 1: {
-				SharePrice = InputSharePrice();
+				SharePrice = inputSharePrice();
 				break;
 			}
 			
 			case 2: {
-				Eps = InputEps();								
+				Eps = inputEps();								
 				break;
 			}
 			case 3: {
-				CalPer(SharePrice, Eps);
+				calPer(SharePrice, Eps);
 				break;
 			}
 			case 4: {
@@ -45,7 +45,7 @@ public class PerCalculator {
 			
 		}
 	
-		static int MenuSelect() {
+		static int selectMenu() {
 			Scanner sc = new Scanner(System.in);
 			System.out.println("PER 계산기입니다. 번호를 입력하세요");
 			System.out.println("1. 주당시장가격 입력");
@@ -56,7 +56,7 @@ public class PerCalculator {
 			return Menu;
 		}
 	
-		static int InputSharePrice() {
+		static int inputSharePrice() {
 			int SharePrice = 0;
 			Scanner sc = new Scanner(System.in);
 			DecimalFormat Form = new DecimalFormat("###,###,####,###");
@@ -69,12 +69,12 @@ public class PerCalculator {
 			return SharePrice;
 		}
 		
-		static double InputEps() {
+		static double inputEps() {
 			int Earning = 0;
 			int OutstandingShare = 0 ;
 			double Eps = 0;
 			Scanner sc = new Scanner(System.in);
-			DecimalFormat Form = new DecimalFormat("###,###,####,###");
+			DecimalFormat Form = new DecimalFormat("###,###,###,####,###");
 			DecimalFormat Form2 = new DecimalFormat("###,###,####,###.###");
 			//숫자 자릿수 변환 https://jamesdreaming.tistory.com/203
 			
@@ -93,7 +93,7 @@ public class PerCalculator {
 			return Eps;
 		}
 		
-		static void CalPer(int SharePrice, double Eps) {
+		static void calPer(int SharePrice, double Eps) {
 			DecimalFormat Form2 = new DecimalFormat("###,###,####,###.###");
 			//숫자 자릿수 변환 https://jamesdreaming.tistory.com/203
 			double Per = 0;
