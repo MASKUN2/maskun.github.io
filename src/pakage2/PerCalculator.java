@@ -56,7 +56,7 @@ public class PerCalculator {
 			return Menu;
 		}
 	
-		public static int InputSharePrice() {
+		static int InputSharePrice() {
 			int SharePrice = 0;
 			Scanner sc = new Scanner(System.in);
 			DecimalFormat Form = new DecimalFormat("###,###,####,###");
@@ -69,7 +69,7 @@ public class PerCalculator {
 			return SharePrice;
 		}
 		
-		public static double InputEps() {
+		static double InputEps() {
 			int Earning = 0;
 			int OutstandingShare = 0 ;
 			double Eps = 0;
@@ -93,7 +93,7 @@ public class PerCalculator {
 			return Eps;
 		}
 		
-		public static void CalPer(int SharePrice, double Eps) {
+		static void CalPer(int SharePrice, double Eps) {
 			DecimalFormat Form2 = new DecimalFormat("###,###,####,###.###");
 			//숫자 자릿수 변환 https://jamesdreaming.tistory.com/203
 			double Per = 0;
