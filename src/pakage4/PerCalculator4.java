@@ -26,12 +26,12 @@ public class PerCalculator4 {
 				//값 입력
 				savedData = inData();
 				
-				for(int i=0 ; i<3 ; i++) {
-				System.out.println(savedData[i].name);
-				System.out.println(savedData[i].earning);
-				System.out.println(savedData[i].numOuts);
-				System.out.println(savedData[i].sharePrice);
-				}
+//				for(int i=0 ; i<3 ; i++) {
+//				System.out.println(savedData[i].name);
+//				System.out.println(savedData[i].earning);
+//				System.out.println(savedData[i].numOuts);
+//				System.out.println(savedData[i].sharePrice);
+//				}
 				break;
 			}
 			
@@ -70,7 +70,7 @@ public class PerCalculator4 {
 			
 			
 		}
-		//비교 출력
+		//비교 후 출력
 		Arrays.sort(savedData, new Comparator<CompanyData>() {
 
 			@Override
@@ -79,14 +79,16 @@ public class PerCalculator4 {
 			}
 			
 		});
+		
+		System.out.println("--------------------------");
+		
 		for(int i=0; i<3; i++) {
-			System.out.printf("%d.위 기업명: %s  PER: %f %n"
+			System.out.printf("%d위) 기업명: %s  PER: %f %n"
 					, i+1, savedData[i].name, savedData[i].per);
 		}
-		System.out.println("----------------------");
 		
+		System.out.println("--------------------------\n");
 		
-		//String name = savedData[i].name;
 		
 	}
 
