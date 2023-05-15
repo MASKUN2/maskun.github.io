@@ -2,7 +2,6 @@ package pakage4;
 
 import java.util.Arrays;
 import java.util.Comparator;
-import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class PerCalculator4 {
@@ -11,11 +10,8 @@ public class PerCalculator4 {
 	public static void main(String[] args) {
 		boolean LoopCheck = true;
 		int Menu ;
-		CompanyData[] savedData = new CompanyData[4];
-		savedData[0] = new CompanyData();
-		savedData[1] = new CompanyData();
-		savedData[2] = new CompanyData();
-		savedData[3] = new CompanyData();
+		DataList data = new DataList();
+		data.list = new CompanyData[1];
 		
 		while (LoopCheck) {
 			//메뉴선택
@@ -24,20 +20,14 @@ public class PerCalculator4 {
 			switch (Menu) {
 			case 1: {
 				//값 입력
-				savedData = inData();
+				inData(data);
 				
-//				for(int i=0 ; i<3 ; i++) {
-//				System.out.println(savedData[i].name);
-//				System.out.println(savedData[i].earning);
-//				System.out.println(savedData[i].numOuts);
-//				System.out.println(savedData[i].sharePrice);
-//				}
 				break;
 			}
 			
 			case 2: {
 				//결과 값 계산
-				outCal(savedData);								
+				outCal(data);								
 				break;
 			}
 			case 3: {
@@ -57,34 +47,37 @@ public class PerCalculator4 {
 		}
 	}
 	
-	private static void outCal(CompanyData[] savedData) {
-
+	private static void outCal(DataList data) {
+		int in = data.index ;
+		CompanyData[] list = data.list ;
 		
 		//per 계산
-		for(int i=0; i<3; i++) {
+		for(int i=0; i<in; i++) {
 
-			int price = savedData[i].sharePrice;
-			int earning = savedData[i].earning;
-			int numOuts = savedData[i].numOuts;
-			savedData[i].per = (double) price/(earning / numOuts);
-			
+			int price = list[i].sharePrice;
+			int earning = list[i].earning;
+			int numOuts = list[i].numOuts;
+			list[i].per = (double) price/(earning / numOuts);
 			
 		}
-		//비교 후 출력
-		Arrays.sort(savedData, new Comparator<CompanyData>() {
+		
+		
 
-			@Override
-			public int compare(CompanyData o1, CompanyData o2) {
-				return (Double.compare(o1.per, o2.per) * -1);
-			}
-			
-		});
+		
+		Arrays.sort(list, new Comparator<CompanyData>() {
+		  
+		 @Override 
+		 public int compare(CompanyData o1, CompanyData o2) { 
+			 return(Double.compare(o1.per, o2.per) * -1); }
+		  
+		 });
+		 
 		
 		System.out.println("--------------------------");
 		
-		for(int i=0; i<3; i++) {
+		for(int i=0; i<in; i++) {
 			System.out.printf("%d위) 기업명: %s  PER: %f %n"
-					, i+1, savedData[i].name, savedData[i].per);
+					, i+1, list[i].name, list[i].per);
 		}
 		
 		System.out.println("--------------------------\n");
@@ -92,25 +85,42 @@ public class PerCalculator4 {
 		
 	}
 
-	private static CompanyData[] inData() {
-		CompanyData[] savedData = new CompanyData[3];
-		savedData[0] = new CompanyData();
-		savedData[1] = new CompanyData();
-		savedData[2] = new CompanyData();
+	private static void inData(DataList data) {
 		
 		Scanner sc = new Scanner(System.in);
 		
-		for(int i=0; i<3 ; i++) {
-			System.out.printf("%d 번째 기업의 이름을 입력해주세요 %n", i+1);
-			savedData[i].name = sc.next();
-			System.out.println("현재가를 입력해주세요");
-			savedData[i].sharePrice = sc.nextInt();
-			System.out.println("당기순이익을 입력해주세요");
-			savedData[i].earning = sc.nextInt();
-			System.out.println("유통주식수를 입력해주세요");
-			savedData[i].numOuts = sc.nextInt();
+		int in = data.index ;
+		CompanyData company = new CompanyData();
+		CompanyData[] list = data.list ;
+		    
+		if(data.list.length == data.index) {
+			CompanyData[] temp = new CompanyData[data.list.length + data.Append];
+			
+			for(int i=0; i<data.list.length;i++) {
+				temp[i] = data.list[i];
+			}
+			data.list = temp;
+			
 		}
-		return savedData;
+		
+
+		System.out.printf("%d 번째 기업의 이름을 입력해주세요 %n", in+1);
+		company.name = sc.next();
+		System.out.println("현재가를 입력해주세요");
+		company.sharePrice = sc.nextInt();
+		System.out.println("당기순이익을 입력해주세요");
+		company.earning = sc.nextInt();
+		System.out.println("유통주식수를 입력해주세요");
+		company.numOuts = sc.nextInt();
+		
+		data.list[in] = company;
+		
+		
+		
+		
+		
+		data.index++;
+		
 		
 
 		
