@@ -35,7 +35,7 @@ public class PerCalculator4_1 {
 			case 3: {
 				//종료
 				System.out.println("잘 가셔요!");
-				LoopCheck = false;
+				LoopCheck = false; 
 			}
 	
 			default: {
