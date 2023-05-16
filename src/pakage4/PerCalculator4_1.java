@@ -106,7 +106,7 @@ public class PerCalculator4_1 {
 			for(int i=0; i<data.list.length;i++) {
 				temp[i] = data.list[i];
 			}
-			data.list = temp;
+			data.list = temp; 
 			
 		}
 		
