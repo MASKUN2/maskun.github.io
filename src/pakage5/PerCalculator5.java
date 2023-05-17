@@ -9,7 +9,6 @@ public class PerCalculator5 {
 		boolean LoopCheck = true;
 		int Menu ;
 		DataList data = new DataList();
-		data.list = new CompanyData[1];
 
 		
 		while (LoopCheck) {

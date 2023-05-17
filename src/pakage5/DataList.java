@@ -8,7 +8,13 @@ public class DataList {
 	
 	CompanyData[] list;
 	private int index;
-	private int Append = 1;
+	private int Append;
+	
+	public DataList() {
+		list = new CompanyData[1];
+		Append = 1;
+		
+	}
 	
 	void outCal() {
 		
