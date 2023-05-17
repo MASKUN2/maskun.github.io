@@ -9,9 +9,9 @@ public class DataList {
 	int index;
 	int Append = 1;
 
-	static void outCal(DataList data) {
-	int in = data.index ;
-	CompanyData[] list = data.list ;
+	void outCal() {
+	int in = this.index ;
+	CompanyData[] list = this.list ;
 	
 	//per 계산
 	for(int i=0; i<in; i++) {

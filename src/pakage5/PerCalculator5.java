@@ -25,7 +25,7 @@ public class PerCalculator5 {
 			
 			case 2: {
 				//결과 값 계산
-				DataList.outCal(data);
+				data.outCal();
 				break;
 			}
 			case 3: {
