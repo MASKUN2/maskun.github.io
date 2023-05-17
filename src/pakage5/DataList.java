@@ -19,7 +19,7 @@ public class DataList {
 		int price = list[i].sharePrice;
 		int earning = list[i].earning;
 		int numOuts = list[i].numOuts;
-		list[i].per = (double) price/(earning / numOuts);
+		list[i].per =  price/(earning /(double) numOuts);
 		
 	}
 	
@@ -48,20 +48,20 @@ public class DataList {
 }
 
 
-	static void inData(DataList data) {
+	void inData() {
 		
 		Scanner sc = new Scanner(System.in);
 		
-		int in = data.index ;
+		int in = this.index ;
 		CompanyData company = new CompanyData();
 		    
-		if(data.list.length == data.index) {
-			CompanyData[] temp = new CompanyData[data.list.length + data.Append];
+		if(this.list.length == this.index) {
+			CompanyData[] temp = new CompanyData[this.list.length + this.Append];
 			
-			for(int i=0; i<data.list.length;i++) {
-				temp[i] = data.list[i];
+			for(int i=0; i<this.list.length;i++) {
+				temp[i] = this.list[i];
 			}
-			data.list = temp; 
+			this.list = temp; 
 			
 		}
 		
@@ -75,13 +75,13 @@ public class DataList {
 		System.out.println("유통주식수를 입력해주세요");
 		company.numOuts = sc.nextInt();
 		
-		data.list[in] = company;
+		this.list[in] = company;
 		
 		
 		
 		
 		
-		data.index++;
+		this.index++;
 		
 		
 	

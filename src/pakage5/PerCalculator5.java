@@ -1,7 +1,5 @@
 package pakage5;
 
-import java.util.Arrays;
-import java.util.Comparator;
 import java.util.Scanner;
 
 public class PerCalculator5 {
@@ -21,8 +19,7 @@ public class PerCalculator5 {
 			switch (Menu) {
 			case 1: {
 				//값 입력
-				DataList.inData(data);
-				
+				data.inData();
 				break;
 			}
 			
