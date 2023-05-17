@@ -10,8 +10,7 @@ public class DataList {
 	int Append = 1;
 
 	void outCal() {
-	int in = this.index ;
-	CompanyData[] list = this.list ;
+	int in = index ;
 	
 	//per 계산
 	for(int i=0; i<in; i++) {
@@ -52,16 +51,16 @@ public class DataList {
 		
 		Scanner sc = new Scanner(System.in);
 		
-		int in = this.index ;
+		int in = index ;
 		CompanyData company = new CompanyData();
 		    
-		if(this.list.length == this.index) {
-			CompanyData[] temp = new CompanyData[this.list.length + this.Append];
+		if(list.length == index) {
+			CompanyData[] temp = new CompanyData[list.length + Append];
 			
-			for(int i=0; i<this.list.length;i++) {
-				temp[i] = this.list[i];
+			for(int i=0; i<list.length;i++) {
+				temp[i] = list[i];
 			}
-			this.list = temp; 
+			list = temp; 
 			
 		}
 		
@@ -75,13 +74,13 @@ public class DataList {
 		System.out.println("유통주식수를 입력해주세요");
 		company.numOuts = sc.nextInt();
 		
-		this.list[in] = company;
+		list[in] = company;
 		
 		
 		
 		
 		
-		this.index++;
+		index++;
 		
 		
 	
