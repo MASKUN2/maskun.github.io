@@ -5,6 +5,22 @@ public class CompanyData {
 	private int sharePrice, earning, numOuts;
 	private double per;
 	
+	public CompanyData() {
+		this("null",0,0,0);
+	}
+	
+	public CompanyData(String name2, int sharePrice2, int earning2, int numOuts2) {
+		this.name = name2;
+		this.sharePrice = sharePrice2;
+		this.earning = earning2;
+		this.numOuts = numOuts2;
+	}
+
+	public void calPer() {
+		per = sharePrice/(earning /(double) numOuts);
+		
+	}
+	
 	public String getName() {
 		return name;
 	}

@@ -21,11 +21,8 @@ public class DataList {
 	int in = index ;
 	//per 계산
 	for(int i=0; i<in; i++) {
-
-		int price = list[i].getSharePrice();
-		int earning = list[i].getEarning();
-		int numOuts = list[i].getNumOuts();
-		list[i].setPer(price/(earning /(double) numOuts)); 
+		// 데이터 객체 CompanyData 에게 연산 위임
+		list[i].calPer(); 
 		
 	}
 	
@@ -35,7 +32,7 @@ public class DataList {
 		 return(Double.compare(o1.getPer(), o2.getPer()) * -1); }
 	  
 	 });
-	 
+
 	System.out.println("--------------------------");
 	
 	for(int i=0; i<in; i++) {
@@ -48,11 +45,10 @@ public class DataList {
 }
 
 	void inData() {
-		
 		Scanner sc = new Scanner(System.in);
-		
+		String name;
+		int sharePrice, earning, numOuts;
 		int in = index ;
-		CompanyData company = new CompanyData();
 		    
 		if(list.length == index) {
 			CompanyData[] temp = new CompanyData[list.length + Append];
@@ -62,15 +58,18 @@ public class DataList {
 			}
 			list = temp; 
 			
-		}
+		}		
+		
 		System.out.printf("%d 번째 기업의 이름을 입력해주세요 %n", in+1);
-		company.setName(sc.next());
+		name = sc.next();
 		System.out.println("현재가를 입력해주세요");
-		company.setSharePrice(sc.nextInt());
+		sharePrice = sc.nextInt();
 		System.out.println("당기순이익을 입력해주세요");
-		company.setEarning(sc.nextInt());
+		earning = sc.nextInt();
 		System.out.println("유통주식수를 입력해주세요");
-		company.setNumOuts(sc.nextInt());
+		numOuts = sc.nextInt();
+		
+		CompanyData company = new CompanyData(name, sharePrice, earning, numOuts);
 		
 		list[in] = company;
 						

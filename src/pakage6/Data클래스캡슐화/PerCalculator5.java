@@ -31,6 +31,7 @@ public class PerCalculator5 {
 					//종료
 					System.out.println("잘 가셔요!");
 					LoopCheck = false;
+					break;
 				}
 		
 				default: {
