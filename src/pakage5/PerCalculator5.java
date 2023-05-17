@@ -17,29 +17,26 @@ public class PerCalculator5 {
 			Menu = selectMenu();
 			
 			switch (Menu) {
-			case 1: {
-				//값 입력
-				data.inData();
-				break;
-			}
-			
-			case 2: {
-				//결과 값 계산
-				data.outCal();
-				break;
-			}
-			case 3: {
-				//종료
-				System.out.println("잘 가셔요!");
-				LoopCheck = false;
-			}
-	
-			default: {
-				System.out.println("Wrong input \n");
-			}
+				case 1: {
+					//값 입력
+					data.inData();
+					break;
+				}
 				
-			
+				case 2: {
+					//결과 값 계산
+					data.outCal();
+					break;
+				}
+				case 3: {
+					//종료
+					System.out.println("잘 가셔요!");
+					LoopCheck = false;
+				}
 		
+				default: {
+					System.out.println("Wrong input \n");
+				}
 		
 			}
 		}

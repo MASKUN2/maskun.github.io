@@ -5,13 +5,14 @@ import java.util.Comparator;
 import java.util.Scanner;
 
 public class DataList {
-	CompanyData[] list;
-	int index;
-	int Append = 1;
-
-	void outCal() {
-	int in = index ;
 	
+	CompanyData[] list;
+	private int index;
+	private int Append = 1;
+	
+	void outCal() {
+		
+	int in = index ;
 	//per 계산
 	for(int i=0; i<in; i++) {
 
@@ -22,18 +23,13 @@ public class DataList {
 		
 	}
 	
-	
-
-	
 	Arrays.sort(list, new Comparator<CompanyData>() {
-	  
 	 @Override 
 	 public int compare(CompanyData o1, CompanyData o2) { 
 		 return(Double.compare(o1.per, o2.per) * -1); }
 	  
 	 });
 	 
-	
 	System.out.println("--------------------------");
 	
 	for(int i=0; i<in; i++) {
@@ -43,9 +39,7 @@ public class DataList {
 	
 	System.out.println("--------------------------\n");
 	
-	
 }
-
 
 	void inData() {
 		
@@ -63,8 +57,6 @@ public class DataList {
 			list = temp; 
 			
 		}
-		
-	
 		System.out.printf("%d 번째 기업의 이름을 입력해주세요 %n", in+1);
 		company.name = sc.next();
 		System.out.println("현재가를 입력해주세요");
@@ -75,15 +67,8 @@ public class DataList {
 		company.numOuts = sc.nextInt();
 		
 		list[in] = company;
-		
-		
-		
-		
-		
+						
 		index++;
-		
-		
-	
 		
 	}
 }
