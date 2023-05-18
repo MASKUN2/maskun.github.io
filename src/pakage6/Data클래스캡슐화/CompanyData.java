@@ -16,9 +16,9 @@ public class CompanyData {
 		this.numOuts = numOuts2;
 	}
 
-	public void calPer() {
-		per = sharePrice/(earning /(double) numOuts);
-		
+	
+	  public void calPer() { per = sharePrice/(earning /(double) numOuts);
+	 
 	}
 	
 	public String getName() {
