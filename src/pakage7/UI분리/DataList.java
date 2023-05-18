@@ -11,8 +11,8 @@ public class DataList {
 	private int Append;
 	
 	public DataList() {
-		//생성자
-		list = new CompanyData[1];
+		//생성자 
+		list = new CompanyData[1]; // Aggregation Has A 차후 추가됨
 		Append = 1;
 		
 	}

@@ -4,7 +4,12 @@ import java.util.Scanner;
 
 public class ConsoleUi {
 
-	private DataList data = new DataList();
+	private DataList data;
+	// Composition Has A 일체형
+	//생성자
+	public ConsoleUi() {
+		data = new DataList();
+	}
 
 	public int getMenu() {
 		
