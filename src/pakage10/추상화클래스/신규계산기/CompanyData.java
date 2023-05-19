@@ -1,4 +1,4 @@
-package pakage9.추상화클래스;
+package pakage10.추상화클래스.신규계산기;
 
 public class CompanyData {
 	private String name;

@@ -1,4 +1,4 @@
-package pakage9.추상화클래스;
+package pakage9.추상화클래스.뼈대;
 
 public class PerCalculator {
 	// 복수 기업의 P/E 계산, 정렬기
