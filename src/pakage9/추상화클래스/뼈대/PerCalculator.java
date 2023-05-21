@@ -6,7 +6,7 @@ public class PerCalculator {
 	public static void main(String[] args) {
 		boolean LoopCheck = true;
 		
-		ConsoleUi console = new ConsoleUi(); //Dependency
+		AbsConsoleUi console = new (); //Dependency
 
 		while (LoopCheck) {
 			//메뉴선택
