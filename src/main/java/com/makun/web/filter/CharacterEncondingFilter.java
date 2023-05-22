@@ -13,12 +13,16 @@ public class CharacterEncondingFilter implements Filter {
 
 	@Override
 	public void doFilter(ServletRequest request, 
-			ServletResponse reponse, FilterChain chain)
+			ServletResponse response, FilterChain chain)
 			throws IOException, ServletException {
 		
 		System.out.println("before Filter!");
 		request.setCharacterEncoding("UTF-8");
-		chain.doFilter(request, reponse);
+		response.setCharacterEncoding("UTF-8");//송신 인코딩 지정
+		response.setContentType("text/html; charset = UTF-8");
+		
+		chain.doFilter(request, response);
+		
 		System.out.println("after Filter!");
 
 	}
