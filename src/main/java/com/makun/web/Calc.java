@@ -9,24 +9,34 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-@WebServlet("/add")
-public class Add extends HttpServlet{
+@WebServlet("/calc")
+public class Calc extends HttpServlet{
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String x_ = request.getParameter("x");
 		String y_ = request.getParameter("y");
+		String op = request.getParameter("operator");	
+		
 		int x = 0;
 		int y = 0;
+		int result = 0;
 		
 		if(!x_.equals("")) x = Integer.parseInt(x_);
 		if(!y_.equals("")) y = Integer.parseInt(y_);
 		
+		switch (op) {
+			case "덧셈": {
+				result = x+y;
+				break;
+			}
+			case "뺄셈": {
+				result = x-y;
+				break;
+			}
+			
+		}
 		
-		//int x = Integer.parseInt(request.getParameter("x")); 
-		//int y = Integer.parseInt(request.getParameter("y"));
-		
-		int result = x+y;
 		
 		response.getWriter().printf("답은 %d 입니다.", result);
 		
