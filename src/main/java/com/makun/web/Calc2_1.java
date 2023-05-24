@@ -16,7 +16,7 @@ import jakarta.websocket.Session;
 public class Calc2_1 extends HttpServlet{
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//상태유지. 세션 사용하여 연산하기(appl와 다른점은 세션내(현재 접속한 사용자의 환경)에서만 사용가능)
+		//상태유지. 세션 사용하여 연산하기(appl와 다른점은 세션내(현재 접속한 사용자의 환경)에서만 사용가능, 브라우저가 바뀌면 다른 사용자로 인식)
 		String v_ = request.getParameter("v");
 		String op = request.getParameter("operator");	
 		HttpSession session = request.getSession();

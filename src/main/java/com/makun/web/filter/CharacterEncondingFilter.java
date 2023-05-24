@@ -18,8 +18,8 @@ public class CharacterEncondingFilter implements Filter {
 		
 		System.out.println("before Filter!");
 		request.setCharacterEncoding("UTF-8");
-		response.setCharacterEncoding("UTF-8");//송신 인코딩 지정
-		response.setContentType("text/html; charset = UTF-8");
+		//response.setCharacterEncoding("UTF-8");//송신 인코딩 지정
+		//response.setContentType("text/html; charset = UTF-8");
 		
 		chain.doFilter(request, response);
 		
