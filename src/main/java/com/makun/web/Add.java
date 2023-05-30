@@ -22,7 +22,6 @@ public class Add extends HttpServlet{
 		if(!x_.equals("")) x = Integer.parseInt(x_);
 		if(!y_.equals("")) y = Integer.parseInt(y_);
 		
-		
 		//int x = Integer.parseInt(request.getParameter("x")); 
 		//int y = Integer.parseInt(request.getParameter("y"));
 		

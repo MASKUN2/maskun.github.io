@@ -23,7 +23,7 @@ public class Mumu extends HttpServlet{
 		}
 		//기본적인 웹 요청은 문서 GET임, 이 때 쿼리 스트링을 함께 전달가능
 		// /hello?cnt=3  :  이 페이지에 cnt 변수에 3으로 쿼리
-		int cnt =0;
+		int cnt = 0;
 //		cnt = Integer.parseInt(request.getParameter("cnt"));
 //		for(int j=0; j<cnt;j++) {
 //			out.println("cnt 쿼리스트링만큼 출력<br>");
