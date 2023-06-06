@@ -2,19 +2,19 @@ package pakageJDBC.Service;
 
 import java.util.Date;
 
-public class Notice {
+public class C02Notice {
 	private int id ;
 	private String title;
 	private String writerId;
 	private Date regData;
 	private String content;
 	private int hit;
-	private String getFiles;
+	private String files;
 	
-	public Notice() {
+	public C02Notice() {
 	}
 	
-	public Notice(int id, String title, String writerId, Date regData, String content, int hit) {
+	public C02Notice(int id, String title, String writerId, Date regData, String content, int hit, String files) {
 		
 		this.id = id;
 		this.title = title;
@@ -22,6 +22,7 @@ public class Notice {
 		this.regData = regData;
 		this.content = content;
 		this.hit = hit;
+		this.files = files;
 	
 	}
 	
@@ -62,12 +63,12 @@ public class Notice {
 		this.hit = hit;
 	}
 
-	public String getGetFiles() {
-		return getFiles;
+	public String getFiles() {
+		return files;
 	}
 
-	public void setGetFiles(String getFiles) {
-		this.getFiles = getFiles;
+	public void setFiles(String getFiles) {
+		this.files = getFiles;
 	}
 }
 
