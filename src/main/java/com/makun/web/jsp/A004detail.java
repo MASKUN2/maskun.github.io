@@ -37,14 +37,9 @@ public class A004detail extends HttpServlet{
 			int hit = rs.getInt("HIT");
 			String files = rs.getString("FILES");
 			String content = rs.getString("content");
-			
-			request.setAttribute("title", title);
-			request.setAttribute("regdate", regdate);
-			request.setAttribute("writer_id" , writer_id);
-			request.setAttribute("hit",hit );
-			request.setAttribute("files",files );
-			request.setAttribute("content",content );
-			
+
+			A005notice notice = new A005notice(title, regdate, writer_id, hit, files, content);
+			request.setAttribute("notice", notice);
 			
 			rs.close();
 			st.close();

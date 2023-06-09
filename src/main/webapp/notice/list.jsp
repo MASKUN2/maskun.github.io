@@ -1,20 +1,9 @@
-<%@page import="java.sql.PreparedStatement"%>
-<%@page import="java.sql.ResultSet"%>
-<%@page import="java.sql.Statement"%>
-<%@page import="java.sql.DriverManager"%>
-<%@page import="java.sql.Connection"%>
+
+<%@page import="java.util.List"%>
+<%@page import="com.makun.web.jsp.A005notice"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%
-String url = "jdbc:oracle:thin:@localhost:1521/xepdb1";
-String sql = "SELECT * FROM NOTICE";
 
-Class.forName("oracle.jdbc.driver.OracleDriver");
-Connection con = DriverManager.getConnection(url, "MASKUN", "0000");
-Statement st = con.createStatement();
-ResultSet rs = st.executeQuery(sql);
-
-%>
 
 <!DOCTYPE html>
 <html>
@@ -189,15 +178,17 @@ ResultSet rs = st.executeQuery(sql);
 					</thead>
 					<tbody>
 					
-					<%while(rs.next()) {%>	
+					<% List<A005notice> list = (List<A005notice>)request.getAttribute("list");%>
+					<%for(A005notice n : list) {%>	
+					<%pageContext.setAttribute("n", n); %>
 					<tr>
-						<td><%=rs.getInt("ID") %></td>
-						<td class="title indent text-align-left"><a href="detail?ID=<%=rs.getInt("ID")%>"><%=rs.getString("TITLE") %></a></td>
-						<td><%=rs.getString("WRITER_ID") %></td>
+						<td>${n.id}</td>
+						<td class="title indent text-align-left"><a href="detail?ID=${n.id}">${n.title}</a></td>
+						<td>${n.writer_id}</td>
 						<td>
-							<%=rs.getDate("regdate") %>		
+							${n.regdate}	
 						</td>
-						<td><%=rs.getInt("hit") %></td>
+						<td>${n.hit}</td>
 					</tr>
 					
 					<% }%>
@@ -275,8 +266,3 @@ ResultSet rs = st.executeQuery(sql);
     
     </html>
     
-<%
-rs.close();
-st.close();
-con.close();
-%>
